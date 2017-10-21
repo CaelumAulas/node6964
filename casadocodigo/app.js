@@ -9,17 +9,11 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (request, response) => {
-  response.redirect('/home')
-})
+require('./routes/home')(app)
+// const home = require('./routes/home')
+// home(app)
 
-app.get('/home', (req, res) => {
-  res.render('index')
-})
-
-app.get('/produtos', (req, res) => {
-  res.render('produtos/lista')
-})
+require('./routes/produtos')(app)
 
 app.use((req, res) => {
   res.status(404).render('404')

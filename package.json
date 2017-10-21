@@ -1,0 +1,15 @@
+{
+  "name": "35",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ola-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ola-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

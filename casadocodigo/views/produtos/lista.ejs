@@ -1,4 +1,4 @@
-https://github.com/MarcoBrunoBR/arquivos-js35
+<!-- https://github.com/MarcoBrunoBR/arquivos-js35 -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,26 +11,29 @@ https://github.com/MarcoBrunoBR/arquivos-js35
   <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Listagem de produto</h1>
 
-  <table class="table table-condensed table-bordered table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Título</th>
-        <th>Preço</th>
-        <th>Descrição</th>
-      </tr>
-    </thead>
+  <article class="container">
+    <h1>Listagem de produto</h1>
 
-    <tbody>
-      <% livros.forEach(function (livro) { %>
-      <tr>
-        <td><%= livro.titulo %></td>
-        <td><%= livro.preco %></td>
-        <td><%= livro.descricao %></td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
+    <table class="table table-condensed table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Preço</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% livros.forEach(function (livro) { %>
+        <tr>
+          <td><%= livro.titulo %></td>
+          <td><%= livro.preco %></td>
+          <td><%= livro.descricao %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </article>
 </body>
 </html>

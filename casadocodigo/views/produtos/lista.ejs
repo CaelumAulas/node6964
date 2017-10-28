@@ -1,3 +1,5 @@
+https://github.com/MarcoBrunoBR/arquivos-js35
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,8 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Listagem de produto</title>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
   <h1>Listagem de produto</h1>
+
+  <table class="table table-condensed table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Preço</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% livros.forEach(function (livro) { %>
+      <tr>
+        <td><%= livro.titulo %></td>
+        <td><%= livro.preco %></td>
+        <td><%= livro.descricao %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 </body>
 </html>

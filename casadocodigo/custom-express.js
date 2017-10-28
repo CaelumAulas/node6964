@@ -1,4 +1,5 @@
 const express = require('express')
+const load = require('express-load')
 const app = express()
 const http = require('http')
 
@@ -11,11 +12,10 @@ app.use((req, res, next) => {
   next()
 })
 
-require('./routes/home')(app)
-// const home = require('./routes/home')
-// home(app)
-
-require('./routes/produtos')(app)
+load('routes')
+    .then('infra')
+    .then('dao')
+    .into(app)
 
 app.use((req, res) => {
   res.status(404).render('404')

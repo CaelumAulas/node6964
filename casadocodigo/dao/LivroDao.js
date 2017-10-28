@@ -8,4 +8,4 @@ class LivroDao {
   }
 }
 
-module.exports = LivroDao
+module.exports = () => LivroDao

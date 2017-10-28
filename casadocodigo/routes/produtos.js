@@ -12,5 +12,7 @@ module.exports = app => {
     connection.query('SELECT * FROM livros', (error, result, fields) => {
       res.render('produtos/lista', {livros: result})
     })
+
+    connection.end()
   })
 }

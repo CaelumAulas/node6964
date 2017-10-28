@@ -4,7 +4,15 @@ module.exports = app => {
     const livroDao = new app.dao.LivroDao(connection)
 
     livroDao.getAll((error, result, fields) => {
-      res.render('produtos/lista', {livros: result})
+      res.format({
+        html: function() {
+          res.render('produtos/lista', {livros: result})
+        },
+        json: function() {
+          res.json(result)
+        }
+      })
+
     })
   })
 

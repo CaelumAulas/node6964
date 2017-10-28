@@ -1,17 +1,11 @@
-const connectionFactory = require('../infra/connectionFactory')
-
-const LivroDao = (function() {
-  const module = {}
-
-  module._connection = connectionFactory()
-
-  module.getAll = function(callback) {
-    module._connection.query('SELECT * FROM livros', callback)
+class LivroDao {
+  constructor(connection) {
+    this._connection = connection
   }
 
-  return {
-    getAll: module.getAll
+  getAll(callback) {
+    this._connection.query('SELECT * FROM livros', callback)
   }
-})
+}
 
 module.exports = LivroDao

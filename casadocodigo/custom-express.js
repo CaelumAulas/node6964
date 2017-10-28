@@ -1,11 +1,13 @@
 const express = require('express')
 const load = require('express-load')
+const bodyParser = require('body-parser')
 const app = express()
 const http = require('http')
 
 app.set('view engine', 'ejs')
 
 app.use(express.static('./assets'))
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.use((req, res, next) => {
   console.log('URL:', req.url)

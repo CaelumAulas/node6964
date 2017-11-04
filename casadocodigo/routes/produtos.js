@@ -29,7 +29,7 @@ module.exports = app => {
 
     if(errors) {
       // res.render('produtos/form', {errors: errors, livro: livro})
-      res.render('produtos/form', {errors, livro})
+      res.status(403).render('produtos/form', {errors, livro})
     } else {
       livroDao.insert(livro, (error, result, fields) => {
         res.redirect('/produtos')

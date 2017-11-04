@@ -14,4 +14,16 @@ describe('#ProdutosRoutes', () => {
            .expect('Content-type', /html/)
            .expect(200, done)
   })
+
+  it('cadastrando um livro por json', (done) => {
+    const livro = {}
+    livro.titulo = 'Node'
+    livro.preco = 20.12
+    livro.descricao = 'Node ae'
+
+    request.post('/produtos')
+           .query('Content-Type','application/vnd.api+json')
+           .send(livro)
+           .expect(200, done)
+  })
 })

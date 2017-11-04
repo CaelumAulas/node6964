@@ -1,0 +1,18 @@
+:root {
+  --fundo: #e67e22;
+  --border: #9b59b6;
+  --font: #ecf0f1;
+  --btn: #2ecc71;
+  --btn-over: #27ae60;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}

@@ -2,6 +2,8 @@
   background-color: var(--fundo);
   color: var(--font);
   height: 90vh;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .msg__title {
   text-align: center;
@@ -13,6 +15,9 @@
   width: 85vw;
   border: 2px solid var(--border);
   float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
 }
 
 .msg-send__action {

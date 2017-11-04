@@ -21,12 +21,24 @@ module.exports = app => {
     const livroDao = new app.dao.LivroDao(connection)
     const livro = req.body
 
-    livroDao.insert(livro, (error, result, fields) => {
-      res.redirect('/produtos')
-    })
+    req.assert('titulo', 'Título deve ser preenchido').notEmpty()
+    req.assert('preco', 'Preço deve ser um número').isFloat()
+    const errors = req.validationErrors()
+
+    console.log(errors)
+
+    if(errors) {
+      // res.render('produtos/form', {errors: errors, livro: livro})
+      res.render('produtos/form', {errors, livro})
+    } else {
+      livroDao.insert(livro, (error, result, fields) => {
+        res.redirect('/produtos')
+      })
+    }
   })
 
   app.get('/produtos/form', (req, res) => {
-    res.render('produtos/form')
+    const livro = ''
+    res.render('produtos/form', {livro})
   })
 }

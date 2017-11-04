@@ -4,23 +4,31 @@
     <div class ="container min-container">
         <h2 class="basic-title">Add</h2>
 
+        <% if(locals.errors) { %>
+          <ul class="list-unstyled">
+            <% errors.forEach((error) => { %>
+              <li class="alert alert-danger"><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        <% } %>
+
         <form action="/produtos" method="post" class="well" role="form">
             <div class="form-group">
                 <label for="titulo">Titulo</label>
                 <div class="input-group">
-                    <input type="text" name="titulo" placeholder="titulo do livro"/>
+                    <input type="text" name="titulo" placeholder="titulo do livro" value="<%= livro.titulo %>"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="preco">Preço</label>
                 <div class="input-group">
-                    <input type="text" name="preco" placeholder="valor do livro"/>
+                    <input type="text" name="preco" placeholder="valor do livro" value="<%= livro.preco %>"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="descricao">Descricao</label>
                 <div class="input-group">
-                    <textarea name="descricao"></textarea>
+                    <textarea name="descricao" value="<%= livro.descricao %>"><%= livro.descricao %></textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Gravar</button>

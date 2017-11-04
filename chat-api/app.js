@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT
 const bodyParser = require('body-parser')
+
 const cors = require('cors')
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -10,10 +11,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors())
 
 app.post('/msg', (req, res) => {
-  const msg = req.body.msg
+  const msg = req.body
+
+  console.log('CHEGOU NA API', msg)
 
   res.send(msg)
 })
+
 
 app.listen(port, () => {
   console.log(`Servidor de pé em http://localhost:${port}`)

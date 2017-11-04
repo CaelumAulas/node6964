@@ -4,15 +4,19 @@
   height: 90vh;
   padding-left: 40px;
   padding-right: 40px;
+  overflow: scroll;
 }
+
 .msg__title {
   text-align: center;
   text-transform: uppercase;
 }
 
+
+
 .msg-send__content {
   height: 10vh;
-  width: 85vw;
+  width: 85%;
   border: 2px solid var(--border);
   float: left;
   padding-left: 10px;
@@ -24,7 +28,7 @@
   background-color: var(--btn);
   color: var(--font);
   font-size: 20px;
-  width: 15vw;
+  width: 15%;
   height: 10vh;
   cursor: pointer;
 
